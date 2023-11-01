@@ -5,12 +5,12 @@ import FormInputField from "../components/FormInputField";
 
 function SignIn() {
     const { login } = useContext(AuthContext);
-    const [email, setEmail] = useState('');
+    const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
 
     function handleSubmit(e) {
         e.preventDefault();
-        login();
+        login(emailAddress);
     }
 
     return (
@@ -23,10 +23,10 @@ function SignIn() {
               <FormInputField
                   labelName="inputEmail"
                   labelText="Emailadres"
-                  inputType="text"
+                  inputType="email"
                   inputName="inputEmail"
-                  inputValue={email}
-                  setInput={setEmail}
+                  inputValue={emailAddress}
+                  setInput={setEmailAddress}
                   required={true}
                   placeholder="bv. patrick.van.tessel@capazit.nl"
               />
@@ -34,7 +34,7 @@ function SignIn() {
               <FormInputField
                   labelName="inputPassword"
                   labelText="Password"
-                  inputType="text"
+                  inputType="password"
                   inputName="inputPassword"
                   inputValue={password}
                   setInput={setPassword}

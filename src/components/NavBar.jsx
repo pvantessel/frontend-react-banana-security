@@ -5,7 +5,7 @@ import {AuthContext} from "../context/AuthContext";
 
 function NavBar() {
     const navigate = useNavigate();
-    const {isAuth, logout, login, signup} = useContext(AuthContext);
+    const {isAuth, logout, login, signup, user} = useContext(AuthContext);
 
     return (
         <nav>
@@ -22,25 +22,29 @@ function NavBar() {
                 <div>
                     <button
                         type="button"
-                        onClick={login}
+                        onClick= { () => navigate('/signin') }
                     >
                         Log in
                     </button>
 
                     <button
                         type="button"
-                        onClick={signup}
+                        onClick={ () => navigate('/signup') }
                     >
                         Registreren
                     </button>
                 </div>
                 :
-                <button
-                    type="button"
-                    onClick={logout}
-                >
-                    Log out
-                </button>
+                <>
+                    <p>{user}</p>
+                    <button
+                        type="button"
+                        onClick={logout}
+                    >
+                        Log out
+                    </button>
+
+                </>
             }
         </nav>
     );

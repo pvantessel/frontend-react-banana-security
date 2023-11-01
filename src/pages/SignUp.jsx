@@ -37,7 +37,7 @@ function SignUp() {
               <FormInputField
                   labelName="inputEmail"
                   labelText="Emailadres"
-                  inputType="text"
+                  inputType="email"
                   inputName="inputEmail"
                   inputValue={email}
                   setInput={setEmail}
@@ -48,7 +48,7 @@ function SignUp() {
               <FormInputField
                   labelName="inputPassword"
                   labelText="Password"
-                  inputType="text"
+                  inputType="password"
                   inputName="inputPassword"
                   inputValue={password}
                   setInput={setPassword}
